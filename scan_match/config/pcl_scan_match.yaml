@@ -1,0 +1,18 @@
+# Methods = nearest, heuristic, plane, pcl
+method: pcl
+
+# true for calibration mode, false for scan odometry mode 
+calibrate: false
+
+in_scan_topic_front: /scan_front
+in_scan_topic_back: /scan_rear
+
+#ICP Parameter
+maximum_iterations: 100
+euclidean_fitness_epsilon: 1.0e-14
+transformation_epsilon: 1.0e-17
+max_correspondence_distance: 0.5
+
+##for heuristic
+#in degree
+max_correspondence_angle: 90

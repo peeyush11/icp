@@ -1,0 +1,9 @@
+<launch>
+  <!-- Launch ROS Node for listener-->
+  <node pkg="scan_match" type="scan_match" name="scan_matching" output="screen">
+    <rosparam command="load" file="$(find scan_match)/config/calibration_matrix.yaml" />
+    <rosparam command="load" file="$(find scan_match)/config/scan_match.yaml" />
+    <param name="calibration_file" value="$(find scan_match)/config/calibration_matrix.yaml" />
+  </node>
+  <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz_velo" args="-d $(find scan_match)/config/scan_odometry.rviz"/>
+</launch>
